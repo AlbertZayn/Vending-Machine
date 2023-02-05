@@ -1,5 +1,16 @@
 body {
     text-align: center;
+    background: #b7b7c2;
+    background: -webkit-linear-gradient(272deg, #b7b7c2 0%, #34323a 100%);
+    background: linear-gradient(272deg, #b7b7c2 0%, #34323a 100%);
+}
+
+h4 {
+    color: #000;
+}
+
+span {
+    color: #000;
 }
 
 /* Кнопки продуктов */
