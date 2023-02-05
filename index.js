@@ -96,38 +96,56 @@ document.querySelector(".update-button").addEventListener("click", function refr
 const denominations = [1, 5, 10, 50, 100, 500];
 
 //Присваивание цен продуктам
-const products = [                       
-    { name: 'sprite', price: 89 },
-    { name: 'fanta', price: 99 },
-    { name: 'cocaCola', price: 109 },
-    { name: 'schweppes', price: 149 },
-    { name: 'lipton', price: 90 },
-    { name: 'конфетка', price: 10 },
-    { name: 'жвачка', price: 5 },
-    { name: 'зубочистка', price: 1 }
-];
+
+const products = [
+    {name: 'sprite', price: 89},
+    {name: 'fanta', price: 99},
+    {name: 'cocaCola', price: 109},
+    {name: 'schweppes', price: 149},
+    {name: 'lipton', price: 90},
+    {name: 'конфетка', price: 10},
+    {name: 'жвачка', price: 5},
+    {name: 'зубочистка', price: 1},
+]
+
+// Тут я пытаюсь связать каждую кнопку c соответствующими данными в массиве,
+// чтобы при клике на каждый продукт выдавало сообщение по оставшейся сумме.
+// Пытался разными способами, но так и не вышло. 
+
+// for (var i = 0; i < document.querySelectorAll(".prod-button").length; i++) {
+//     document.querySelectorAll(".prod-button")[i].addEventListener("click", 
+// )}
 
 
-for (var i = 0; i < document.querySelectorAll(".prod-button").length; i++) {  
-    document.querySelectorAll(".prod-button")[i].addEventListener("click", function() {
-        
-    })
+
+function calculateChange() {
+    var amountChange = 0;
+    if ((TotalRubbles()) != 0) {
+        return (amountChange = TotalRubbles() - document.querySelectorAll(".prod-button").price);  // ??????
+    }
+    return(amountChange)
 }
 
-function dispenceProduct (selectedProduct) {
+function dispenceProduct(name) {
+    MessageElement.innerHTML = "";
+    change = 0;
 
+    var selectedProduct = products[name];
+
+    change = calculateChange();
+
+    if (change < 0) {
+        msg = "Внесённой суммы не достаточно. " + change + " ₽ возвращено";
+    }
+    amountMoneyNotes = 0;
+    change = 0;
+    clearCounting();
+    clearData();
+    MessageElement.innerHTML = msg;
 }
 
 
-
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -159,12 +177,6 @@ function dispenceProduct (selectedProduct) {
 //         MessageElement.innerHTML = msg;
 //     }
 // }
-
-
-
-
-
-
 
 
 
