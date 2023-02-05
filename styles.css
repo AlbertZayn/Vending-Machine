@@ -1,0 +1,72 @@
+body {
+    text-align: center;
+}
+
+/* Кнопки продуктов */
+.products {
+    display: inline-block;
+    width: 700px;
+    margin: 10rem 0 0;
+}
+
+.prod-button {
+    background: #824328;
+    background-image: -webkit-linear-gradient(top, #824328, #2ba5b8);
+    background-image: -moz-linear-gradient(top, #824328, #2ba5b8);
+    background-image: -ms-linear-gradient(top, #824328, #2ba5b8);
+    background-image: -o-linear-gradient(top, #824328, #2ba5b8);
+    background-image: linear-gradient(to bottom, #824328, #2ba5b8);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 0px 0px 30px #666666;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 40px 0px 40px 0px;
+    border: solid #314d5e 2px;
+    text-decoration: none;
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+}
+
+.prod-button:hover {
+    background: #59211e;
+    background-image: -webkit-linear-gradient(top, #59211e, #1f4d5c);
+    background-image: -moz-linear-gradient(top, #59211e, #1f4d5c);
+    background-image: -ms-linear-gradient(top, #59211e, #1f4d5c);
+    background-image: -o-linear-gradient(top, #59211e, #1f4d5c);
+    background-image: linear-gradient(to bottom, #59211e, #1f4d5c);
+    text-decoration: none;
+}
+
+.pressed {
+    opacity: 0.8;
+}
+
+p {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3rem;
+}
+
+/* Кнопки интерфейса */
+.interface {
+    display: inline-block;
+    position: relative;
+    top: 5rem;
+}
+
+.interface-button {
+    margin: 0.5rem;
+}
+
+span {
+    margin: 0 1rem 0;
+}
+
+input {
+    margin: 0.5rem;
+}
+
