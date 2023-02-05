@@ -1,5 +1,7 @@
 # Vending-Machine
 
+demo: https://albertzayn.github.io/Vending-Machine/
+
 Imitation vending machine.
 Conditions:
 1) Project must be in HTML and JavaScript
