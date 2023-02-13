@@ -53,7 +53,15 @@ span {
 }
 
 .pressed {
-    opacity: 0.8;
+    opacity: 0.4;
+}
+
+.visAvail {
+    background: url(images/notavailable.jpg) no-repeat;
+    color: red;
+    width: 125px;
+    height: 125px;
+    background-size: cover;
 }
 
 p {
@@ -79,5 +87,7 @@ span {
 
 input {
     margin: 0.5rem;
+    width: 40px;
+    height: 15px;
+    text-align: center;
 }
-

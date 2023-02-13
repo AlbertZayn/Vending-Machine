@@ -15,6 +15,7 @@ function clickAnimation (selectedButton) {
     }, 300);
 }
 
+
 //Присваивание постоянных значений купюрам
 const value_50r = 50;     
 const value_100r = 100;
@@ -42,7 +43,7 @@ function TotalRubbles() {
         note_1000r = note_1000r * value_1000r;
     }
 //Общее количество денег
-    amountMoneyNotes = note_50r + note_100r + note_500r + note_1000r;   
+    amountMoneyNotes = note_50r + note_100r + note_500r + note_1000r;
     return amountMoneyNotes;
 }
 
@@ -90,129 +91,66 @@ document.querySelector(".cancelButton").addEventListener("click", function cance
 //Обновление табла
 document.querySelector(".update-button").addEventListener("click", function refreshPage(){   
     location.reload();
-} 
-);
+});
 
-const denominations = [1, 5, 10, 50, 100, 500];
 
-//Присваивание цен продуктам
-
+//Присваивание массива цен продуктам + генерация случайного числа доступного товара для products
 const products = [
-    {name: 'sprite', price: 89},
-    {name: 'fanta', price: 99},
-    {name: 'cocaCola', price: 109},
-    {name: 'schweppes', price: 149},
-    {name: 'lipton', price: 90},
-    {name: 'конфетка', price: 10},
-    {name: 'жвачка', price: 5},
-    {name: 'зубочистка', price: 1},
+    {name: 'sprite', price: 89, quantity: Math.floor(Math.random() * 11)},
+    {name: 'fanta', price: 99, quantity: Math.floor(Math.random() * 11)},
+    {name: 'cocaCola', price: 109, quantity: Math.floor(Math.random() * 11)},
+    {name: 'schweppes', price: 149, quantity: Math.floor(Math.random() * 11)},
+    {name: 'lipton', price: 90, quantity: Math.floor(Math.random() * 11)},
+    {name: 'конфетка', price: 10, quantity: Math.floor(Math.random() * 11)},
+    {name: 'жвачка', price: 5, quantity: Math.floor(Math.random() * 11)},
+    {name: 'зубочистка', price: 1, quantity: Math.floor(Math.random() * 11)}
 ]
 
-// Тут я пытаюсь связать каждую кнопку c соответствующими данными в массиве,
-// чтобы при клике на каждый продукт выдавало сообщение по оставшейся сумме.
-// Пытался разными способами, но так и не вышло. 
+const buttons = document.querySelectorAll(".prod-button");
+let remainingMoney = 0;
 
-// for (var i = 0; i < document.querySelectorAll(".prod-button").length; i++) {
-//     document.querySelectorAll(".prod-button")[i].addEventListener("click", 
-// )}
-
-
-
-function calculateChange() {
-    var amountChange = 0;
-    if ((TotalRubbles()) != 0) {
-        return (amountChange = TotalRubbles() - document.querySelectorAll(".prod-button").price);  // ??????
+//Присвоение аттрибута `наличие количества продукта` каждой кнопке
+//Добавление background картинки "недоступно" для продуктов, которых нет в аппарате
+document.querySelectorAll(".prod-button").forEach((button, i) => {
+    if (products[i].quantity === 0) {
+        button.classList.add("visAvail");
     }
-    return(amountChange)
-}
+});
 
-function dispenceProduct(name) {
-    MessageElement.innerHTML = "";
-    change = 0;
+buttons.forEach(button => {
+    button.addEventListener("click", function distraction() {
+        const productName = button.value;
+        const product = products.find(p => p.name === productName);
+        const quantityCheck = product.quantity === 0;
+        const insertedMoney = TotalRubbles();
+        let msg = "";
+            if (quantityCheck) {
+                msg = `Данный товар временно отсутствует`;
+            }
+            else if (insertedMoney >= product.price) {
+                remainingMoney = insertedMoney - product.price;
+                msg = `Вы выбрали продукт ${product.name} за ${product.price} ₽. Осталось  ${document.getElementById("paid").innerHTML = remainingMoney} ₽`;
+            } else {
+                msg = `Недостаточно денег. Необходимо ещё ${product.price - insertedMoney} ₽ для продукта ${product.name}.`;
+            }
+            MessageElement.innerHTML = msg;
+    })
+});
 
-    var selectedProduct = products[name];
+var MessageElement2 = document.getElementById("change"); 
+const denominationsChange = [500, 100, 50, 10, 5, 1]; 
+let residue = 0;
 
-    change = calculateChange();
-
-    if (change < 0) {
-        msg = "Внесённой суммы не достаточно. " + change + " ₽ возвращено";
+document.querySelector(".change-button").addEventListener("click", function calculateChange() {
+    var msg2 = "";
+    const change = [];
+    residue = remainingMoney;
+    for (var i = 0; i < denominationsChange.length; i++) {
+      while (residue >= denominationsChange[i]) {
+        change.push(denominationsChange[i]);
+        residue -= denominationsChange[i];
+      }
     }
-    amountMoneyNotes = 0;
-    change = 0;
-    clearCounting();
-    clearData();
-    MessageElement.innerHTML = msg;
-}
-
-
-   
-
-
-
-
-
-
-
-// var products = ['Sprite', 'Fanta', 'CocaCola', 'Schweppes', 'Lipton', 'Конфетка', 'Жвачка', 'Зубочистка'];
-// function calculateChange () {
-//     var amountChange = 0;
-//     if (TotalRubbles() != 0) {
-//         return (amountChange = (TotalRubbles() - document.querySelectorAll(".prod-buttin")[i].value))
-//     }
-//     return amountChange;
-// }
-
-// function getProd (product) {
-//     MessageElement.innerHTML = "";
-//     change = 0;
-//     var selectedProduct = products(product);
-//     change = calculateChange();
-
-//     if (change < 0) {
-//         msg = "Внесённых средств не достаточно. " + change + " ₽ возвращено";
-//         TotalRubbles() = 0;
-//         change = 0;
-//         clearCounting();
-//         clearData();
-//         MessageElement.innerHTML = msg;
-//     }
-// }
-
-
-
-
-
-
-
-// document.querySelector(".change-button").addEventListener("click", function calculateChange (position, amountMoneyNotes) {
-//     const positions = [                       //Присваивание цен продуктам
-//     { name: 'Sprite', price: 89 },
-//     { name: 'Fanta', price: 99 },
-//     { name: 'CocaCola', price: 109 },
-//     { name: 'Schweppes', price: 149 },
-//     { name: 'Lipton', price: 90 },
-//     { name: 'Конфетка', price: 10 },
-//     { name: 'Жвачка', price: 5 },
-//     { name: 'Зубочистка', price: 1 }
-// ];
-
-//     var change = 0;
-//     if (TotalRubbles() != 0) {
-//         return (change = TotalRubbles() - price);
-//     }
-// })
-
-// const selectedPosition = position.find(item => item.name === positions);
-// if (selectedPosition) {
-//     if (selectedPosition.price === amountMoneyNotes)
-//         return "Ваш " 
-// }
-
-// });
-
-
-
-
-
-    
-
+    msg2 = `Ваша сдача ${document.getElementById("change").innerHTML = change.join('₽, ')}₽`;
+    MessageElement2.innerHTML = msg2;
+});
