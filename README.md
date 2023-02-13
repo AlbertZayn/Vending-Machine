@@ -2,7 +2,7 @@
 
 demo: https://albertzayn.github.io/Vending-Machine/
 
-Imitation vending machine.
+Imitation of Vending Machine.
 Conditions:
 
 1) ✓ Accept money in denominations of 50, 100, 500 and 1000 rubles. 
