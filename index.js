@@ -99,7 +99,7 @@ const products = [
     {name: 'cocaCola', price: 109, quantity: Math.floor(Math.random() * 11)},
     {name: 'schweppes', price: 149, quantity: Math.floor(Math.random() * 11)},
     {name: 'lipton', price: 90, quantity: Math.floor(Math.random() * 11)},
-    {name: 'конфетка', price: 10},
+    {name: 'конфета', price: 10},
     {name: 'жвачка', price: 5},
     {name: 'зубочистка', price: 1}
 ]
