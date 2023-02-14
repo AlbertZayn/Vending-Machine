@@ -15,8 +15,8 @@
  1.1 Расчёт сдачи должен остаться с приоритетом на выдачу больших номиналов.
 2. Если отсутствуют монеты 1, 5 и 10 рублей в аппарате - выдача товаров на сдачу вместо монет с эквивалентными ценами (зубочистка 1р, жвачка 5р, конфета 10р)
 
-Имитация торгового автомата.
-Условия:
+**Имитация торгового аппарата.**
+_Условия:_
 
 1) ✓ Принятие денег номиналоми 50, 100, 500 и 1000 рублей.
 2) ✓ Выдача сдачи номиналами 1, 5, 10, 50, 100 и 500 рублей.
@@ -27,7 +27,7 @@
 8) (Х)При отсутствии монет номиналом 1, 5 и/или 10 рублей вместо них
 аппарат должен выдавать товары на эквивалентную сумму (конфеты, жвачки, зубочистки).
 
-Instuction:
+**Instuction:**
 1. Insert money by notes
 2. Choose the product (if product not available you'll find relevant picture inside the button)
 3. You will find your product in the issuance section
@@ -35,8 +35,8 @@ Instuction:
 5. Press the "Despence change" and you'll get your change in denominations of 1, 5, 10, 50, 100 and 500 rubles (higher denominations are given priority when issuing change)
 6. Press the update in order to choose another product
 
-Imitation of Vending Machine.
-Conditions:
+**Imitation of Vending Machine.**
+_Conditions:_
 
 1) ✓ Accept money in denominations of 50, 100, 500 and 1000 rubles. 
 2) ✓ Give change in denominations of 1, 5, 10, 50, 100 and 500 rubles. 
