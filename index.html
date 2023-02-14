@@ -4,33 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <title>Vending Machine</title>
 </head>
 <body>
-    <div class="products">
-        <button id="Sprite" class="prod-button" value="sprite">Sprite</button>
-        <button id="Fanta" class="prod-button" value="fanta">Fanta</button>
-        <button id="Coca-Cola" class="prod-button" value="cocaCola">Coca-Cola</button>
-        <button id="Schweppes" class="prod-button" value="schweppes">Schweppes</button>
-        <button id="Lipton" class="prod-button" value="lipton">Lipton</button>
-        <button id="Конфета" class="prod-button" value="конфета">Конфета</button>
-        <button id="Жвачка" class="prod-button" value="жвачка">Жвачка</button>
-        <button id="Зубочистка" class="prod-button" value="зубочистка">Зубочистка</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="products col-sm-5 col-md-6">
+                <div class="col-lg-3">
+                    <button id="Sprite" class="prod-button" value="sprite">Sprite</button><br>
+                    <span class="prod-price"> 89 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Fanta" class="prod-button" value="fanta">Fanta</button><br>
+                    <span class="prod-price">99 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Coca-Cola" class="prod-button" value="cocaCola">Coca-Cola</button><br>
+                    <span class="prod-price">109 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Schweppes" class="prod-button" value="schweppes">Schweppes</button><br>
+                    <span class="prod-price">149 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Lipton" class="prod-button" value="lipton">Lipton</button><br>
+                    <span class="prod-price">90 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                <button id="Конфета" class="prod-button" value="конфета">Конфета</button><br>
+                    <span class="prod-price">10 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Жвачка" class="prod-button" value="жвачка">Жвачка</button><br>
+                    <span class="prod-price">5 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Зубочистка" class="prod-button" value="зубочистка">Зубочистка</button><br>
+                    <span class="prod-price">1 ₽</span>
+                </div>
+                <div class="col-lg-3">
+                    <button class="dispence-button"></button>
+                    <span class="dispence-message">Выдача</span>
+                </div>
+            </div>
+            <div class="interface col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                <input id="50r" type="number" min="0" name="50 рублей" value="0" oninput="counting()"
+                    placeholder="0"><span>купюра 50 ₽</span><br>
+                <input id="100r" type="number" min="0" name="100 рублей" value="0" oninput="counting()"
+                    placeholder="0"><span>купюра 100 ₽</span><br>
+                <input id="500r" type="number" min="0" name="500 рублей" value="0" oninput="counting()"
+                    placeholder="0"><span>купюра 500 ₽</span><br>
+                <input id="1000r" type="number" min="0" name="1000 рублей" value="0" oninput="counting()"
+                    placeholder="0"><span>купюра 1000 ₽</span><br>
+                <span id="cancelMsg">Общее количество внесённых денег: <span id="paid">0</span> ₽</span><br>
+                <button class="cancelButton interface-button">Отмена</button><br>
+                <button class="update-button interface-button">Обновить табло</button><br>
+                <button class="change-button interface-button">Выдать сдачу</button><br>
+                <span id="change">Ваша сдача: <span id="changeSum">0</span> ₽</span>
+            </div>
+        </div>
     </div>
-    <div class="interface">
-        <input id="50r" type="number" min="0" name="50 рублей" value="0" oninput="counting()" placeholder="0"><span>купюра 50 ₽</span><br>
-        <input id="100r" type="number" min="0" name="100 рублей" value="0" oninput="counting()" placeholder="0"><span>купюра 100 ₽</span><br>
-        <input id="500r" type="number" min="0" name="500 рублей" value="0" oninput="counting()" placeholder="0"><span>купюра 500 ₽</span><br>
-        <input id="1000r" type="number" min="0" name="1000 рублей" value="0" oninput="counting()" placeholder="0"><span>купюра 1000 ₽</span><br>
-        <h4 id="cancelMsg">Общее количество внесённых денег: <span id="paid">0</span> ₽</h4>
-        <button class="cancelButton interface-button">Отмена</button><br>
-        <button class="update-button interface-button">Обновить табло</button><br>
-        <button class="change-button interface-button">Выдать сдачу</button>
-        <h4 id="change">Ваша сдача: <span id="changeSum">0</span> ₽</h4>
-    </div>
-<script src="index.js"></script>    
+</div>
+<script src="index.js"></script>
 </body>
 </html>
-
-

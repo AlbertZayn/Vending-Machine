@@ -5,19 +5,36 @@ body {
     background: linear-gradient(272deg, #b7b7c2 0%, #34323a 100%);
 }
 
-h4 {
+.container-fluid {
+    padding: 7% 15%;
+  }
+
+p {
     color: #000;
 }
 
-span {
+.prod-price {
+    color: #fff;
+}
+
+.dispence-message {
+    color: #fff;
+}
+
+#paid #changeSum {
     color: #000;
+    margin: 0 1rem 0;
 }
 
 /* Кнопки продуктов */
-.products {
+.row {
+    /* width: 700px; */
+    position: relative;
+}
+
+.col-lg-3 {
     display: inline-block;
-    width: 700px;
-    margin: 10rem 0 0;
+    position: relative;
 }
 
 .prod-button {
@@ -37,8 +54,8 @@ span {
     padding: 40px 0px 40px 0px;
     border: solid #314d5e 2px;
     text-decoration: none;
-    width: 125px;
-    height: 125px;
+    width: 100px;
+    height: 100px;
     margin: 10px;
 }
 
@@ -52,15 +69,37 @@ span {
     text-decoration: none;
 }
 
+.dispence-button {
+    background: #000;
+    background-image: -webkit-linear-gradient(top, #000, #fff);
+    background-image: -moz-linear-gradient(top, #000, #fff);
+    background-image: -ms-linear-gradient(top, #000, #fff);
+    background-image: -o-linear-gradient(top, #000, #fff);
+    background-image: linear-gradient(to bottom, #000, #fff);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 0px 0px 30px #666666;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 40px 0px 40px 0px;
+    border: solid #314d5e 2px;
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
 .pressed {
     opacity: 0.4;
 }
 
 .visAvail {
     background: url(images/notavailable.jpg) no-repeat;
-    color: red;
-    width: 125px;
-    height: 125px;
+    color: #000;
+    width: 100px;
+    height: 100px;
     background-size: cover;
 }
 
@@ -71,23 +110,88 @@ p {
 }
 
 /* Кнопки интерфейса */
-.interface {
+/* .interface {
     display: inline-block;
     position: relative;
     top: 5rem;
-}
+} */
 
 .interface-button {
     margin: 0.5rem;
 }
 
-span {
-    margin: 0 1rem 0;
-}
 
 input {
     margin: 0.5rem;
     width: 40px;
-    height: 15px;
+    height: 20px;
     text-align: center;
 }
+
+
+/* Выдача товара после клика по кнопке продукта */
+.sprite {
+    background: url(images/sprite.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.fanta {
+    background: url(images/fanta.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.cocaCola {
+    background: url(images/coke.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.schweppes {
+    background: url(images/schweppes.jpg) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.lipton {
+    background: url(images/lipton.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.конфета {
+    background: url(images/candy.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.жвачка {
+    background: url(images/gum.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.зубочистка {
+    background: url(images/toothpick.png) no-repeat;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+

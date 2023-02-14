@@ -1,6 +1,7 @@
 //Идентефикация нажатой клавиши для подсветки-подтверждения 
-for (var i = 0; i < document.querySelectorAll(".prod-button").length; i++) {  
+for (let i = 0; i < document.querySelectorAll(".prod-button").length; i++) {  
     document.querySelectorAll(".prod-button")[i].addEventListener("click", function() {
+        document.querySelector(".dispence-button").classList.add(document.querySelectorAll(".prod-button")[i].value);
         var selectedButton = this.innerHTML;
         clickAnimation(selectedButton);
     })
@@ -14,7 +15,6 @@ function clickAnimation (selectedButton) {
         activeButton.classList.remove("pressed");
     }, 300);
 }
-
 
 //Присваивание постоянных значений купюрам
 const value_50r = 50;     
@@ -84,15 +84,13 @@ document.querySelector(".cancelButton").addEventListener("click", function cance
     } else if (amountMoneyNotes === 0) {
          // добавление сообщения о внесении купюр
         msg = "Помести деньги в приёмник и выбирай";    
-        
     }
-        
 })
+
 //Обновление табла
 document.querySelector(".update-button").addEventListener("click", function refreshPage(){   
     location.reload();
 });
-
 
 //Присваивание массива цен продуктам + генерация случайного числа доступного товара для products
 const products = [
@@ -101,9 +99,9 @@ const products = [
     {name: 'cocaCola', price: 109, quantity: Math.floor(Math.random() * 11)},
     {name: 'schweppes', price: 149, quantity: Math.floor(Math.random() * 11)},
     {name: 'lipton', price: 90, quantity: Math.floor(Math.random() * 11)},
-    {name: 'конфетка', price: 10, quantity: Math.floor(Math.random() * 11)},
-    {name: 'жвачка', price: 5, quantity: Math.floor(Math.random() * 11)},
-    {name: 'зубочистка', price: 1, quantity: Math.floor(Math.random() * 11)}
+    {name: 'конфетка', price: 10},
+    {name: 'жвачка', price: 5},
+    {name: 'зубочистка', price: 1}
 ]
 
 const buttons = document.querySelectorAll(".prod-button");
@@ -117,6 +115,8 @@ document.querySelectorAll(".prod-button").forEach((button, i) => {
     }
 });
 
+//* доделать код: чтоб можно было на сумму выбрать несколько/много продуктов подряд с подсчётом остатка
+//Выдача сообщения об: отсутствии / выборе продукта + остаток / недостаточном кол-ве внесённых средств
 buttons.forEach(button => {
     button.addEventListener("click", function distraction() {
         const productName = button.value;
@@ -137,18 +137,28 @@ buttons.forEach(button => {
     })
 });
 
+//Попытка выполнения условия:
+// При отсутствии коппеек в аппарате, выдавать товары на сдачу с эквивалентной ценой
 var MessageElement2 = document.getElementById("change"); 
-const denominationsChange = [500, 100, 50, 10, 5, 1]; 
+const denominationsChange = [
+    { rating: 500, denQuantity: "" },
+    { rating: 100, denQuantity: "" },
+    { rating: 50, denQuantity: "" },
+    { rating: 10, denQuantity: Math.floor(Math.random() * 11) },
+    { rating: 5, denQuantity: Math.floor(Math.random() * 11) },
+    { rating: 1, denQuantity: Math.floor(Math.random() * 11) }
+]; 
 let residue = 0;
 
+//Расчёт сдачи. Выдача как можно больших номиналов
 document.querySelector(".change-button").addEventListener("click", function calculateChange() {
     var msg2 = "";
     const change = [];
     residue = remainingMoney;
     for (var i = 0; i < denominationsChange.length; i++) {
-      while (residue >= denominationsChange[i]) {
-        change.push(denominationsChange[i]);
-        residue -= denominationsChange[i];
+      while (residue >= denominationsChange[i].rating) {
+        change.push(denominationsChange[i].rating);
+        residue -= denominationsChange[i].rating;
       }
     }
     msg2 = `Ваша сдача ${document.getElementById("change").innerHTML = change.join('₽, ')}₽`;
