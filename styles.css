@@ -7,7 +7,7 @@ body {
 
 .container-fluid {
     padding: 7% 15%;
-  }
+}
 
 p {
     color: #000;
@@ -120,14 +120,12 @@ p {
     margin: 0.5rem;
 }
 
-
 input {
     margin: 0.5rem;
     width: 40px;
     height: 20px;
     text-align: center;
 }
-
 
 /* Выдача товара после клика по кнопке продукта */
 .sprite {
@@ -193,5 +191,3 @@ input {
     height: 100px;
     background-size: cover;
 }
-
-

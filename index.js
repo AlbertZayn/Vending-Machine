@@ -1,9 +1,11 @@
 //Идентефикация нажатой клавиши для подсветки-подтверждения 
 for (let i = 0; i < document.querySelectorAll(".prod-button").length; i++) {  
     document.querySelectorAll(".prod-button")[i].addEventListener("click", function() {
-        document.querySelector(".dispence-button").classList.add(document.querySelectorAll(".prod-button")[i].value);
+        // document.querySelector(".dispence-button").classList.add(document.querySelectorAll(".prod-button")[i].value);
         var selectedButton = this.innerHTML;
+        var DispenceProduct = $(this).attr("value");
         clickAnimation(selectedButton);
+        dispencedAnimation(DispenceProduct);
     })
 }
 
@@ -85,6 +87,7 @@ document.querySelector(".cancelButton").addEventListener("click", function cance
          // добавление сообщения о внесении купюр
         msg = "Помести деньги в приёмник и выбирай";    
     }
+        MessageElement.innerHTML = msg;
 })
 
 //Обновление табла
@@ -107,6 +110,13 @@ const products = [
 const buttons = document.querySelectorAll(".prod-button");
 let remainingMoney = 0;
 
+function dispencedAnimation (DispenceProduct) {
+    $(".dispence-button").addClass(DispenceProduct);
+    setTimeout(function() {
+        $(".dispence-button").removeClass(DispenceProduct);
+    }, 2000);
+}
+
 //Присвоение аттрибута `наличие количества продукта` каждой кнопке
 //Добавление background картинки "недоступно" для продуктов, которых нет в аппарате
 document.querySelectorAll(".prod-button").forEach((button, i) => {
@@ -123,19 +133,21 @@ buttons.forEach(button => {
         const product = products.find(p => p.name === productName);
         const quantityCheck = product.quantity === 0;
         const insertedMoney = TotalRubbles();
+        remainingMoney = insertedMoney - product.price;
         let msg = "";
             if (quantityCheck) {
                 msg = `Данный товар временно отсутствует`;
             }
             else if (insertedMoney >= product.price) {
-                remainingMoney = insertedMoney - product.price;
                 msg = `Вы выбрали продукт ${product.name} за ${product.price} ₽. Осталось  ${document.getElementById("paid").innerHTML = remainingMoney} ₽`;
-            } else {
+            }
+            else {
                 msg = `Недостаточно денег. Необходимо ещё ${product.price - insertedMoney} ₽ для продукта ${product.name}.`;
             }
             MessageElement.innerHTML = msg;
     })
 });
+
 
 //Попытка выполнения условия:
 // При отсутствии коппеек в аппарате, выдавать товары на сдачу с эквивалентной ценой
@@ -148,6 +160,7 @@ const denominationsChange = [
     { rating: 5, denQuantity: Math.floor(Math.random() * 11) },
     { rating: 1, denQuantity: Math.floor(Math.random() * 11) }
 ]; 
+
 let residue = 0;
 
 //Расчёт сдачи. Выдача как можно больших номиналов
@@ -164,3 +177,13 @@ document.querySelector(".change-button").addEventListener("click", function calc
     msg2 = `Ваша сдача ${document.getElementById("change").innerHTML = change.join('₽, ')}₽`;
     MessageElement2.innerHTML = msg2;
 });
+
+// for (i = 0; i < document.querySelectorAll(".prod-button").length; i++) {  
+//     document.querySelectorAll(".prod-button")[i].addEventListener("click", function() {
+//         if (quantityCheck !== 0) {
+//             document.querySelector(".dispence-button").classList.add(document.querySelectorAll(".prod-button")[i].value);
+//         } else {
+//             document.querySelector(".dispence-button").classList.remove(document.querySelectorAll(".prod-button")[i].value);
+//         }
+//     })
+// }
