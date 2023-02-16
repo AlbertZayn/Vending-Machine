@@ -15,7 +15,7 @@ https://albertzayn.github.io/Vending-Machine/
 
 **Необходимо улучшить (ред. 14.02.2023):**
 1. Добавить возможность выбрать больше одного продукта, отнимая от внесённых денег сумму товара и отображая при этом оставшуюся сумму.
- 1.1 Расчёт сдачи должен остаться с приоритетом на выдачу больших номиналов.
+1.1 Расчёт сдачи должен остаться с приоритетом на выдачу больших номиналов.
 2. Если отсутствуют монеты 1, 5 и 10 рублей в аппарате - выдача товаров на сдачу вместо монет с эквивалентными ценами (зубочистка 1р, жвачка 5р, конфета 10р)
 
 **Имитация торгового аппарата.** 
@@ -37,6 +37,12 @@ _Условия:_
 4. Amount of remaining money will be at screen
 5. Press the "Despence change" and you'll get your change in denominations of 1, 5, 10, 50, 100 and 500 rubles (higher denominations are given priority when issuing change)
 6. Press the update in order to choose another product
+
+**Needs to improve (rev. 02/14/2023):**
+
+1. Add the ability to select more than one product, subtracting the amount of the product from the deposited money and displaying the remaining amount. 
+1.1 Calculation of change should remain with priority on the issuance of large denominations.
+2. If there are no coins of 1, 5 and 10 rubles in the machine - the issuance of goods for change instead of coins with equivalent prices (toothpick 1r, chewing gum 5r, candy 10r)
 
 **Imitation of Vending Machine.**
 _Conditions:_
