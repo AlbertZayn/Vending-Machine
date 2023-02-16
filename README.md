@@ -3,7 +3,7 @@
 **demo**: 
 https://albertzayn.github.io/Vending-Machine/
 
-![Vending-Machine](https://user-images.githubusercontent.com/108021063/219416349-03972973-080a-4b16-87ac-5527de4bcb16.png)
+![Vending-Machine](https://user-images.githubusercontent.com/108021063/219422487-2b119925-6c78-4032-a175-178115ffafa1.png)
 
 **Инструкция:**
 1. Внесите деньги купюрами
