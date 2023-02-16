@@ -1,6 +1,7 @@
 # Vending-Machine
 
-**demo**: https://albertzayn.github.io/Vending-Machine/
+**demo**: 
+https://albertzayn.github.io/Vending-Machine/
 
 **Инструкция:**
 1. Внесите деньги купюрами
