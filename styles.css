@@ -3,6 +3,12 @@ body {
     background: #b7b7c2;
     background: -webkit-linear-gradient(272deg, #b7b7c2 0%, #34323a 100%);
     background: linear-gradient(272deg, #b7b7c2 0%, #34323a 100%);
+    background-image: url(images/Background\ image.png);
+    background-color: #cccccc;
+}
+
+span {
+    color: #fff;
 }
 
 .container-fluid {
@@ -10,7 +16,7 @@ body {
 }
 
 p {
-    color: #000;
+    color: #fff;
 }
 
 .prod-price {
@@ -22,13 +28,12 @@ p {
 }
 
 #paid #changeSum {
-    color: #000;
+    color: #fff;
     margin: 0 1rem 0;
 }
 
 /* Кнопки продуктов */
 .row {
-    /* width: 700px; */
     position: relative;
 }
 
@@ -44,6 +49,7 @@ p {
     background-image: -ms-linear-gradient(top, #824328, #2ba5b8);
     background-image: -o-linear-gradient(top, #824328, #2ba5b8);
     background-image: linear-gradient(to bottom, #824328, #2ba5b8);
+    box-shadow: 10px 5px 5px #314d5e;
     -webkit-border-radius: 10;
     -moz-border-radius: 10;
     border-radius: 10px;
@@ -76,6 +82,7 @@ p {
     background-image: -ms-linear-gradient(top, #000, #fff);
     background-image: -o-linear-gradient(top, #000, #fff);
     background-image: linear-gradient(to bottom, #000, #fff);
+    box-shadow: 10px 5px 5px #34323a;
     -webkit-border-radius: 10;
     -moz-border-radius: 10;
     border-radius: 10px;
@@ -110,21 +117,77 @@ p {
 }
 
 /* Кнопки интерфейса */
-/* .interface {
-    display: inline-block;
-    position: relative;
-    top: 5rem;
-} */
+.interface {
+    background: rgba(47, 87, 92, 0.5);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(47, 87, 92, 0.25);
+    border-radius: 7%;
+    text-align: left;
+
+}
+
+.products {
+    background: rgba(47, 87, 92, 0.5);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(47, 87, 92, 0.25);
+    border-radius: 7%;
+}
 
 .interface-button {
     margin: 0.5rem;
+    background: #a13f40;
+    background-image: -webkit-linear-gradient(top, #a13f40, #5e2644);
+    background-image: -moz-linear-gradient(top, #a13f40, #5e2644);
+    background-image: -ms-linear-gradient(top, #a13f40, #5e2644);
+    background-image: -o-linear-gradient(top, #a13f40, #5e2644);
+    background-image: linear-gradient(to bottom, #a13f40, #5e2644);
+    -webkit-border-radius: 15;
+    -moz-border-radius: 15;
+    border-radius: 15px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 15px 8px 15px;
+    text-decoration: none;
+}
+
+.interface-button:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
 }
 
 input {
     margin: 0.5rem;
-    width: 40px;
-    height: 20px;
+    width: 100px;
+    /* height: 8px;  */
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 10px 0;
+    border: 8px solid #c9c9c9;
+    -webkit-border-radius: 93px / 23px;
+    border-radius: 93px / 23px;
+    font: normal 15px/normal "Times New Roman", Times, serif;
+    color: rgba(255,255,255,1);
     text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: rgb(168, 167, 167);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2) inset;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2) inset;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 /* Выдача товара после клика по кнопке продукта */
