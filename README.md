@@ -1,4 +1,5 @@
 # Vending-Machine
+Imitation of a vending machine
 
 **demo**: 
 https://albertzayn.github.io/Vending-Machine/
